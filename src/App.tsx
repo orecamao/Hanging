@@ -16,6 +16,12 @@ function App() {
   useEffect( () => {
     if( attempts >= 9 ) { 
       setLose( true );
+      
+      // Desplaza la ventana hacia abajo
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth' // Opcional: hace que el desplazamiento sea suave
+      });
     }
   }, [ attempts ] ) // hooks
 
@@ -56,6 +62,12 @@ function App() {
     setAttempts( 0 );
     setLose( false );
     setWon( false );
+
+    // Desplaza la ventana hacia arriba
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Hace que el desplazamiento sea suave
+  });
 
   }
 
