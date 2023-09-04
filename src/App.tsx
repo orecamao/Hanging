@@ -99,7 +99,10 @@ function App() {
       }
 
       <br /><br />
-      <button onClick={ newGame }>Nuevo juego?</button>
+      <button onClick={ newGame }
+        style={{backgroundColor: 'skyblue'}}>
+        Nuevo juego?
+      </button>
     </div>
   )
 };
