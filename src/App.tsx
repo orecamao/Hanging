@@ -16,7 +16,8 @@ function App() {
   useEffect( () => {
     if( attempts >= 9 ) { 
       setLose( true );
-      
+      setWon( false );
+
       // Desplaza la ventana hacia abajo
       window.scrollTo({
         top: document.body.scrollHeight,
@@ -30,12 +31,16 @@ function App() {
     const currentHiddenWord = hiddenWord.split(' ').join('');
     if( currentHiddenWord === word ) {
       setWon( true );
+      setLose( false );
     }
   },[ hiddenWord ])
 
   const checkLetter = (letter: string) => {
 
     if( lose ) {
+      return;
+    }
+    if( won ) {
       return;
     }
 
